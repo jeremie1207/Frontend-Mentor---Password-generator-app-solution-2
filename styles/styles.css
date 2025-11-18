@@ -1,3 +1,33 @@
+:root {
+  /* colors */
+  --color-grey-950: hsl(255, 22%, 4%);
+  --color-grey-900: hsl(248, 17%, 9%);
+  --color-grey-850: hsl(248, 15%, 11%);
+  --color-grey-800: hsl(248, 10%, 15%);
+  --color-grey-700: hsl(248, 5%, 34%);
+  --color-grey-600: hsl(251, 9%, 53%);
+  --color-grey-200: hsl(252, 11%, 91%);
+  --color-green-200: hsl(127, 100%, 82%);
+  --color-yellow-200: hsl(42, 91%, 68%);
+  --color-orange-400: hsl(13, 95%, 66%);
+  --color-red-500: hsl(0, 91%, 63%);
+  --gradient-1: linear-gradient(
+    90deg,
+    rgba(20, 19, 27, 1) 0%,
+    rgba(8, 7, 11, 1) 50%
+  );
+  /* typography */
+  --font-family-primary: "JetBrains Mono", monospace;
+  --text-spacing-primary: 0px;
+  --font-size-32: 2rem;
+  --font-size-24: 1.5rem;
+  --font-size-18: 1.125rem;
+  --font-size-16: 1rem;
+
+  --line-height-1: 1.3125;
+  --line-height-2: 1.3333;
+  --line-height-4: 1.25;
+}
 /* 1. Use a more-intuitive box-sizing model */
 *,
 *::before,
@@ -64,4 +94,74 @@ h4,
 h5,
 h6 {
   text-wrap: balance;
+}
+
+/* utilities */
+
+.grid-container {
+  display: grid;
+}
+
+.flex-container {
+  display: grid;
+}
+
+.justify-content-space-between {
+  justify-content: space-between;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-content-center {
+  align-content: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.padding-block-16 {
+  padding-block: 1rem;
+}
+
+.padding-block-24 {
+  padding-block: 1.5rem;
+}
+
+.padding-inline-32 {
+  padding-inline: 2rem;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.bg-gradient-1 {
+  background: var(--gradient-1);
+}
+
+.bg-grey-800 {
+  background-color: var(--color-grey-800);
+}
+
+.bg-grey-850 {
+  background-color: var(--color-grey-850);
+}
+
+.bg-green-200 {
+  background-color: var(--color-green-200);
+}
+
+.bg-yellow-200 {
+  background-color: var(--color-yellow-200);
+}
+
+.bg-orange-400 {
+  background-color: var(--color-orange-400);
+}
+
+.bg-red-500 {
+  background-color: var(--color-red-500);
 }
