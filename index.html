@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Password generator app</title>
+  </head>
+  <body>
+    <form action="#" class="password_generator">
+      <section class="title_container">
+        <h2 class="title">Password Generator</h2>
+      </section>
+      <section class="settings_container">
+        <!-- password  container -->
+        <section class="password_container">
+          <input
+            class="password"
+            type="text"
+            name="password"
+            id="password"
+            placeholder="P4$5W0rD!"
+            readonly
+          />
+          <section class="copy">
+            <span class="copy_text">COPIED!</span>
+            <img
+              class="icon_copy"
+              src="./assets/images/icon-copy.svg"
+              alt="copy icon"
+            />
+          </section>
+        </section>
+
+        <!-- options container -->
+        <section class="options_container">
+          <!-- character length container -->
+          <section class="character_length_container">
+            <div>
+              <h3 class="character_length_title">Character Length</h3>
+              <p class="character_length">10</p>
+            </div>
+            <input
+              class="slider"
+              type="range"
+              name="slider"
+              id="slider"
+              min="0"
+              max="20"
+            />
+          </section>
+
+          <!-- checkbox container -->
+          <section class="checkbox_options_container">
+            <div class="checkbox_options_item">
+              <input type="checkbox" name="uppercase" id="uppercase" />
+              <label for="uppercase">Include Uppercase Letters</label>
+            </div>
+
+            <div class="checkbox_options_item">
+              <input type="checkbox" name="lowercase" id="lowercase" />
+              <label for="lowercase">Include Lowercase Letters</label>
+            </div>
+
+            <div class="checkbox_options_item">
+              <input type="checkbox" name="numbers" id="numbers" />
+              <label for="numbers">Include Numbers</label>
+            </div>
+
+            <div class="checkbox_options_item">
+              <input type="checkbox" name="symbols" id="symbols" />
+              <label for="symbols">Include Symbols</label>
+            </div>
+          </section>
+
+          <!-- strength container -->
+          <section class="strength_container">
+            <h3 class="strength_title">Strength</h3>
+            <section class="strength_value">
+              <h4 class="strength_value_title">Medium</h4>
+              <section class="strength_value_icon">
+                <div class="level level_1"></div>
+                <div class="level level_2"></div>
+                <div class="level level_3"></div>
+                <div class="level level_4"></div>
+              </section>
+            </section>
+          </section>
+
+          <!-- generate button -->
+          <button>
+            <div>
+              <p>Generate</p>
+              <img
+                src="./assets/images/icon-arrow-right.svg"
+                alt="icon-arrow-right"
+              />
+            </div>
+          </button>
+        </section>
+      </section>
+    </form>
+  </body>
+</html>
