@@ -52,7 +52,7 @@ body {
   font-family: var(--font-family-primary);
   font-size: var(--font-size-18);
   letter-spacing: var(--text-spacing-primary);
-  color: white;
+  color: var(--color-grey-200);
   line-height: 1.5;
   /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
