@@ -136,8 +136,16 @@ main {
   display: grid;
 }
 
+.inline-flex-container {
+  display: inline-flex;
+}
+
 .justify-content-space-between {
   justify-content: space-between;
+}
+
+.justify-content-center {
+  justify-content: center;
 }
 
 .align-items-center {
@@ -214,11 +222,4 @@ main {
 
 .inline-size-100 {
   inline-size: 100%;
-}
-
-.btn {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
 }
