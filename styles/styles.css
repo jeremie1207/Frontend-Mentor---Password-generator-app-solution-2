@@ -166,6 +166,22 @@ h6 {
   background-color: var(--color-red-500);
 }
 
+.color-grey-800 {
+  color: var(--color-grey-800);
+}
+
+.color-grey-600 {
+  color: var(--color-grey-600);
+}
+
+.color-grey-200 {
+  color: var(--color-grey-200);
+}
+
+.color-green-200 {
+  color: var(--color-green-200);
+}
+
 .inline-size-100 {
   inline-size: 100%;
 }
