@@ -97,9 +97,6 @@ h6 {
 }
 
 button {
-  appearance: none;
-  border: none;
-  background: none;
   font: inherit;
   cursor: pointer;
 }
