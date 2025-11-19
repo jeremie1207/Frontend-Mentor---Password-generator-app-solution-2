@@ -96,6 +96,24 @@ h6 {
   text-wrap: balance;
 }
 
+button {
+  appearance: none;
+  border: none;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 3px;
+}
+
 /* utilities */
 
 .grid-container {
@@ -184,4 +202,11 @@ h6 {
 
 .inline-size-100 {
   inline-size: 100%;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 }
