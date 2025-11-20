@@ -124,6 +124,10 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
+svg {
+  fill: currentColor;
+}
+
 /* global */
 main {
   display: grid;
@@ -237,3 +241,30 @@ main {
 .inline-size-100 {
   inline-size: 100%;
 }
+
+/* block */
+
+/* typography */
+
+@media (min-width: 35rem) {
+  .title_container {
+    font-size: var(--font-size-24);
+    line-height: var(--line-height-2);
+  }
+
+}
+
+.password, 
+.character_length {
+  font-size: var(--font-size-24);
+  line-height: var(--line-height-2);
+}
+
+@media (min-width: 35rem) {
+  .password, 
+  .character_length {
+    font-size: var(--font-size-32);
+    line-height: var(--line-height-1);
+  }
+}
+
