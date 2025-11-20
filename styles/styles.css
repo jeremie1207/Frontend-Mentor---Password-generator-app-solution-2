@@ -53,7 +53,6 @@ body {
   line-height: var(--line-height-4);
   letter-spacing: var(--text-spacing-primary);
   color: var(--color-grey-200);
-  line-height: 1.5;
   /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
 }
