@@ -268,3 +268,7 @@ main {
   }
 }
 
+.password {
+  background-color: transparent;
+  border: none;
+}
