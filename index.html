@@ -23,7 +23,7 @@
   <body>
     <main>
       <form action="#" class="password_generator">
-        <section class="title_container">
+        <section class="title_container align-text-center color-grey-600">
           <h2 class="title">Password Generator</h2>
         </section>
         <section class="settings_container">
@@ -37,16 +37,16 @@
               placeholder="P4$5W0rD!"
               readonly
             />
-            <section class="copy">
-              <span class="copy_text">copied</span>
-              <button>
+            <section class="copy color-green-200">
+              <span class="copy_text uppercase">copied</span>
+              <button class="color-green-200">
                 <svg 
                   width="21" 
                   height="24" 
                   xmlns="http://www.w3.org/2000/svg">
                     <path 
                       d="M20.341 3.091 17.909.659A2.25 2.25 0 0 0 16.319 0H8.25A2.25 2.25 0 0 0 6 2.25V4.5H2.25A2.25 2.25 0 0 0 0 6.75v15A2.25 2.25 0 0 0 2.25 24h10.5A2.25 2.25 0 0 0 15 21.75V19.5h3.75A2.25 2.25 0 0 0 21 17.25V4.682a2.25 2.25 0 0 0-.659-1.591ZM12.469 21.75H2.53a.281.281 0 0 1-.281-.281V7.03a.281.281 0 0 1 .281-.281H6v10.5a2.25 2.25 0 0 0 2.25 2.25h4.5v1.969a.282.282 0 0 1-.281.281Zm6-4.5H8.53a.281.281 0 0 1-.281-.281V2.53a.281.281 0 0 1 .281-.281H13.5v4.125c0 .621.504 1.125 1.125 1.125h4.125v9.469a.282.282 0 0 1-.281.281Zm.281-12h-3v-3h.451c.075 0 .147.03.2.082L18.667 4.6a.283.283 0 0 1 .082.199v.451Z" 
-                      fill="currentColor"/>
+                      />
                 </svg>
               </button>
             </section>
@@ -58,7 +58,7 @@
             <section class="character_length_container">
               <div>
                 <h3 class="character_length_title">Character Length</h3>
-                <p class="character_length">10</p>
+                <p class="character_length color-green-200">10</p>
               </div>
               <input
                 class="slider"
@@ -95,9 +95,9 @@
 
             <!-- strength container -->
             <section class="strength_container">
-              <h3 class="strength_title">Strength</h3>
+              <h3 class="strength_title color-grey-600 uppercase">Strength</h3>
               <section class="strength_value">
-                <h4 class="strength_value_title">Medium</h4>
+                <h4 class="strength_value_title uppercase">Medium</h4>
                 <section class="strength_value_icon">
                   <div class="level level_1"></div>
                   <div class="level level_2"></div>
@@ -108,13 +108,13 @@
             </section>
 
             <!-- generate button -->
-            <button>
+            <button class="color-grey-800 uppercase">
               <p>Generate</p>
               <svg width="12" 
                 height="12" 
                 xmlns="http://www.w3.org/2000/svg">
                 <path 
-                  fill="currentColor" 
+                
                   d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z"/>
               </svg>
             </button>
