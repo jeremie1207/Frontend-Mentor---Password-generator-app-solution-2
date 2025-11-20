@@ -166,6 +166,10 @@ main {
   align-content: center;
 }
 
+.gap-8 {
+  gap: 0.5rem;
+}
+
 .hidden {
   display: none;
 }
@@ -242,9 +246,10 @@ main {
   inline-size: 100%;
 }
 
+
 /* block */
 
-/* typography */
+
 
 @media (min-width: 35rem) {
   .title_container {
@@ -268,7 +273,27 @@ main {
   }
 }
 
+
 .password {
   background-color: transparent;
   border: none;
+}
+
+
+.strength_value_icon {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.25rem;
+  width: 3rem;
+  background-color: transparent;
+}
+
+.level {
+  height: 1rem;
+  border: 2px solid var(--color-grey-200);
+}
+
+@media (min-width: 35rem) {
+  .level {
+    height: 1.125rem;
+  }
 }
