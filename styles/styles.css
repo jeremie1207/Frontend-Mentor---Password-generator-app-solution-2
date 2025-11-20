@@ -48,14 +48,21 @@
 }
 
 body {
-  background: var(--gradient-1);
+  background: var(--color-grey-950);
   font-family: var(--font-family-primary);
-  font-size: var(--font-size-18);
+  line-height: var(--line-height-4);
   letter-spacing: var(--text-spacing-primary);
   color: var(--color-grey-200);
   line-height: 1.5;
   /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
+}
+
+@media (min-width: 35rem) {
+  body {
+    font-size: var(--font-size-16);
+    line-height: var(--line-height-2);
+  }
 }
 
 /* 6. Improve media defaults */
