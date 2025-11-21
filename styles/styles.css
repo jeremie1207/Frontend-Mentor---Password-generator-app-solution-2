@@ -135,6 +135,11 @@ main {
   min-block-size: 100vh;
 }
 
+.password_generator {
+  inline-size: 90vw;
+  max-inline-size: 33.75rem;
+}
+
 /* utilities */
 
 .grid-container {
