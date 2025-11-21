@@ -381,3 +381,24 @@ main {
   background-color: var(--color-grey-850);
   border: 0.1rem solid var(--color-green-200);
 }
+
+.option {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  border: 0.1rem solid var(--color-grey-200);
+  cursor: pointer;
+}
+
+.option:checked {
+  background-color: var(--color-green-200);
+  background-image: url("/assets/images/icon-check.svg");
+  background-size: cover;
+  border: 0.1rem solid transparent;
+  background-position: center;
+}
+
+.option:is(:hover, :active) {
+  border: 0.1rem solid var(--color-green-200);
+}
