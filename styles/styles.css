@@ -346,3 +346,38 @@ main {
   border: 2px solid var(--color-green-200);
   background-color: transparent;
 }
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--color-grey-850);
+  height: 0.5rem;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background-color: var(--color-grey-200);
+  border: 0.1rem solid transparent;
+}
+
+.slider::-webkit-slider-thumb:is(:hover, :active) {
+  background-color: var(--color-grey-850);
+  border: 0.1rem solid var(--color-green-200);
+}
+
+.slider::-moz-range-thumb {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background-color: var(--color-grey-200);
+  border: 0.1rem solid transparent;
+}
+
+.slider::-moz-range-thumb:is(:hover, :active) {
+  background-color: var(--color-grey-850);
+  border: 0.1rem solid var(--color-green-200);
+}
