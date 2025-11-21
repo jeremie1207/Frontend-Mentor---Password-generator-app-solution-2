@@ -22,7 +22,7 @@
   </head>
   <body>
     <main>
-      <form action="#" class="password_generator">
+      <form action="#" class="password_generator grid-container">
         <section class="title_container align-text-center color-grey-600">
           <h2 class="title">Password Generator</h2>
         </section>
@@ -30,33 +30,34 @@
           <!-- password  container -->
           <section class="password_container bg-grey-800">
             <input
-              class="password"
+              class="password padding-block-16 padding-inline-32"
               type="text"
               name="password"
               id="password"
               placeholder="P4$5W0rD!"
               readonly
             />
-            <section class="copy color-green-200 inline-flex-container justify-content-space-between align-items-center">
+            <section
+              class="copy color-green-200 inline-flex-container justify-content-space-between align-items-center"
+            >
               <span class="copy_text uppercase hidden">copied</span>
-              <button class="color-green-200">
-                <svg 
-                  width="21" 
-                  height="24" 
-                  xmlns="http://www.w3.org/2000/svg">
-                    <path 
-                      d="M20.341 3.091 17.909.659A2.25 2.25 0 0 0 16.319 0H8.25A2.25 2.25 0 0 0 6 2.25V4.5H2.25A2.25 2.25 0 0 0 0 6.75v15A2.25 2.25 0 0 0 2.25 24h10.5A2.25 2.25 0 0 0 15 21.75V19.5h3.75A2.25 2.25 0 0 0 21 17.25V4.682a2.25 2.25 0 0 0-.659-1.591ZM12.469 21.75H2.53a.281.281 0 0 1-.281-.281V7.03a.281.281 0 0 1 .281-.281H6v10.5a2.25 2.25 0 0 0 2.25 2.25h4.5v1.969a.282.282 0 0 1-.281.281Zm6-4.5H8.53a.281.281 0 0 1-.281-.281V2.53a.281.281 0 0 1 .281-.281H13.5v4.125c0 .621.504 1.125 1.125 1.125h4.125v9.469a.282.282 0 0 1-.281.281Zm.281-12h-3v-3h.451c.075 0 .147.03.2.082L18.667 4.6a.283.283 0 0 1 .082.199v.451Z" 
-                      />
+              <button class="btn-copy color-green-200">
+                <svg width="21" height="24" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M20.341 3.091 17.909.659A2.25 2.25 0 0 0 16.319 0H8.25A2.25 2.25 0 0 0 6 2.25V4.5H2.25A2.25 2.25 0 0 0 0 6.75v15A2.25 2.25 0 0 0 2.25 24h10.5A2.25 2.25 0 0 0 15 21.75V19.5h3.75A2.25 2.25 0 0 0 21 17.25V4.682a2.25 2.25 0 0 0-.659-1.591ZM12.469 21.75H2.53a.281.281 0 0 1-.281-.281V7.03a.281.281 0 0 1 .281-.281H6v10.5a2.25 2.25 0 0 0 2.25 2.25h4.5v1.969a.282.282 0 0 1-.281.281Zm6-4.5H8.53a.281.281 0 0 1-.281-.281V2.53a.281.281 0 0 1 .281-.281H13.5v4.125c0 .621.504 1.125 1.125 1.125h4.125v9.469a.282.282 0 0 1-.281.281Zm.281-12h-3v-3h.451c.075 0 .147.03.2.082L18.667 4.6a.283.283 0 0 1 .082.199v.451Z"
+                  />
                 </svg>
               </button>
             </section>
           </section>
 
           <!-- options container -->
-          <section class="options_container bg-grey-800">
+          <section class="options_container bg-grey-800 grid-container">
             <!-- character length container -->
             <section class="character_length_container">
-              <div class="flex-container justify-content-space-between align-items-center">
+              <div
+                class="flex-container justify-content-space-between align-items-center"
+              >
                 <h3 class="character_length_title">Character Length</h3>
                 <p class="character_length color-green-200">10</p>
               </div>
@@ -94,11 +95,17 @@
             </section>
 
             <!-- strength container -->
-            <section class="strength_container bg-grey-850 flex-container justify-content-space-between">
+            <section
+              class="strength_container bg-grey-850 flex-container justify-content-space-between padding-block-16 padding-inline-32"
+            >
               <h3 class="strength_title color-grey-600 uppercase">Strength</h3>
-              <section class="strength_value inline-flex-container align-items-center gap-8">
+              <section
+                class="strength_value inline-flex-container align-items-center gap-8"
+              >
                 <h4 class="strength_value_title uppercase hidden">Medium</h4>
-                <section class="strength_value_icon grid-container justify-content-space-between">
+                <section
+                  class="strength_value_icon grid-container justify-content-space-between"
+                >
                   <div class="level level_1"></div>
                   <div class="level level_2"></div>
                   <div class="level level_3"></div>
@@ -108,14 +115,15 @@
             </section>
 
             <!-- generate button -->
-            <button class="color-grey-800 uppercase bg-green-200 inline-flex-container justify-content-center align-items-center inline-size-100 gap-8">
+            <button
+              class="btn-generate color-grey-800 uppercase bg-green-200 inline-flex-container justify-content-center align-items-center inline-size-100 gap-8 padding-block-16 padding-inline-32"
+              disabled
+            >
               <p>Generate</p>
-              <svg width="12" 
-                height="12" 
-                xmlns="http://www.w3.org/2000/svg">
-                <path 
-                
-                  d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z"/>
+              <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z"
+                />
               </svg>
             </button>
           </section>

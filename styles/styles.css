@@ -78,7 +78,7 @@ svg {
 input,
 button,
 textarea,
-select, 
+select,
 button {
   font: inherit;
 }
@@ -115,7 +115,6 @@ button {
 }
 
 button:disabled {
-  opacity: 0.5;
   cursor: not-allowed;
 }
 
@@ -246,39 +245,50 @@ main {
   inline-size: 100%;
 }
 
-
 /* block */
-
-
 
 @media (min-width: 35rem) {
   .title_container {
     font-size: var(--font-size-24);
     line-height: var(--line-height-2);
   }
-
 }
 
-.password, 
+.password_container {
+  position: relative;
+  margin-block-end: 1rem;
+}
+
+@media (min-width: 35rem) {
+  .password_container {
+    margin-block-end: 1.5rem;
+  }
+}
+
+.copy {
+  position: absolute;
+  transform: translateY(95%);
+  right: 1rem;
+}
+
+.password,
 .character_length {
   font-size: var(--font-size-24);
   line-height: var(--line-height-2);
 }
 
 @media (min-width: 35rem) {
-  .password, 
+  .password,
   .character_length {
     font-size: var(--font-size-32);
     line-height: var(--line-height-1);
   }
 }
 
-
 .password {
   background-color: transparent;
   border: none;
 }
-
 
 .strength_value_icon {
   grid-template-columns: repeat(4, 1fr);
@@ -288,12 +298,46 @@ main {
 }
 
 .level {
-  height: 1rem;
+  height: 1.125rem;
   border: 2px solid var(--color-grey-200);
 }
 
 @media (min-width: 35rem) {
   .level {
-    height: 1.125rem;
+    height: 1.5rem;
   }
+}
+
+.password_generator,
+.options_container {
+  gap: 1rem;
+}
+
+.password_container,
+.options_container {
+  gap: 2rem;
+}
+
+.options_container {
+  padding: 1rem;
+}
+
+@media (min-width: 35rem) {
+  .options_container {
+    padding: 1.5rem 2rem;
+  }
+}
+
+.btn-copy:is(:hover, :active) {
+  color: var(--color-grey-200);
+}
+
+.btn-generate {
+  border: 2px solid transparent;
+}
+
+.btn-generate:is(:hover, :active) {
+  color: var(--color-green-200);
+  border: 2px solid var(--color-green-200);
+  background-color: transparent;
 }
