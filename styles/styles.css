@@ -341,6 +341,11 @@ main {
   border: 2px solid transparent;
 }
 
+.btn-generate:disabled:is(:hover, :focus) {
+  background-color: var(--color-green-200);
+  color: var(--color-grey-850);
+}
+
 .btn-generate:is(:hover, :active) {
   color: var(--color-green-200);
   border: 2px solid var(--color-green-200);
