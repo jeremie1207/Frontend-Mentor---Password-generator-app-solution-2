@@ -272,14 +272,28 @@ main {
 
 .copy {
   position: absolute;
-  transform: translateY(95%);
+  transform: translateY(50%);
   right: 1rem;
+}
+
+@media (min-width: 28.5rem) {
+  .copy {
+    transform: translateY(95%);
+  }
 }
 
 .password,
 .character_length {
-  font-size: var(--font-size-24);
-  line-height: var(--line-height-2);
+  font-size: var(--font-size-18);
+  line-height: var(--line-height-4);
+}
+
+@media (min-width: 28.5rem) {
+  .password,
+  .character_length {
+    font-size: var(--font-size-24);
+    line-height: var(--line-height-2);
+  }
 }
 
 @media (min-width: 35rem) {
