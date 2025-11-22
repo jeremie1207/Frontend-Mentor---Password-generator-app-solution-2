@@ -307,6 +307,7 @@ main {
 .password {
   background-color: transparent;
   border: none;
+  color: var(--color-grey-200);
 }
 
 .strength_value_icon {
@@ -351,6 +352,10 @@ main {
   color: var(--color-grey-200);
 }
 
+.btn-copy:disabled:is(:hover, :active) {
+  color: var(--color-green-200);
+}
+
 .btn-generate {
   border: 2px solid transparent;
 }
@@ -371,6 +376,7 @@ main {
   appearance: none;
   background-color: var(--color-grey-850);
   height: 0.5rem;
+  margin-block-start: 1rem;
 }
 
 .slider::-webkit-slider-thumb {
