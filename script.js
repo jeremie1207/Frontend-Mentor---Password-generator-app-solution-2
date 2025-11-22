@@ -3,6 +3,9 @@ const sliderValueText = document.querySelector(".character_length");
 const options = document.querySelectorAll(".option");
 const form = document.querySelector(".password_generator");
 
+const isAnyOptionsChecked = () =>
+  Array.from(options).some((option) => option.checked);
+
 slider.addEventListener("input", function () {
   sliderValueText.textContent = this.value;
   const percent = Math.floor((parseInt(this.value) / 20) * 100);
