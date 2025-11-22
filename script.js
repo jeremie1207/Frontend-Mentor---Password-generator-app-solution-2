@@ -6,6 +6,37 @@ const btnGenerate = document.getElementById("generate");
 const passwordInput = document.getElementById("password");
 const btnCopy = document.querySelector(".btn-copy");
 const copiedText = document.querySelector(".copy_text");
+const uppercaseCheckbox = document.getElementById("uppercase");
+const lowercaseCheckbox = document.getElementById("lowercase");
+const numbersCheckbox = document.getElementById("numbers");
+const symbolsCheckbox = document.getElementById("symbols");
+
+
+const UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const LOWERCASE = "abcdefghijklmnopqrstuvwxyz";
+const NUMBERS = "0123456789";
+const SYMBOLS = "!@#$%^&*()_+=-{}[]<>?";
+
+
+function generatePassword(length) {
+  let pool = "";
+
+  if(uppercaseCheckbox.checked) pool+= UPPERCASE;
+
+  if(lowercaseCheckbox.checked) pool+= LOWERCASE;
+
+  if(numbersCheckbox.checked) pool+= NUMBERS;
+
+  if(symbolsCheckbox.checked) pool+= SYMBOLS;
+
+  let password = "";
+
+  for(let i = 0; i < length; i++) {
+    password += pool[Math.floor(Math.random() * pool.length)];
+  }
+
+  return password;
+}
 
 const isAnyOptionsChecked = () =>
   Array.from(options).some((option) => option.checked);
@@ -33,7 +64,7 @@ slider.addEventListener("input", function () {
 
 slider.addEventListener("change", generateBntState);
 options.forEach((option) => option.addEventListener("change", generateBntState));
-passwordInput.addEventListener("change", copyBtnState);
+
 
 btnCopy.addEventListener("click", async function() {
   await navigator.clipboard.writeText(passwordInput.value);
@@ -44,6 +75,9 @@ btnCopy.addEventListener("click", async function() {
   }, 2500);
 });
 
+
 form.addEventListener("submit", function (event) {
   event.preventDefault();
+  let password = generatePassword(parseInt(slider.value));
+  passwordInput.value = password;
 });
