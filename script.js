@@ -2,9 +2,16 @@ const slider = document.getElementById("slider");
 const sliderValueText = document.querySelector(".character_length");
 const options = document.querySelectorAll(".option");
 const form = document.querySelector(".password_generator");
+const btnGenerate = document.getElementById("generate");
 
 const isAnyOptionsChecked = () =>
   Array.from(options).some((option) => option.checked);
+
+const isSliderValueZero = () => parseInt(slider.value) !== 0;
+
+const checkValidity = () => {
+  btnGenerate.disabled = !(isAnyOptionsChecked() && isSliderValueZero());
+};
 
 slider.addEventListener("input", function () {
   sliderValueText.textContent = this.value;
@@ -14,6 +21,9 @@ slider.addEventListener("input", function () {
                                         hsl(248, 15%, 11%) ${percent}%, 
                                         hsl(248, 15%, 11%) 100%)`;
 });
+
+slider.addEventListener("change", checkValidity);
+options.forEach((option) => option.addEventListener("change", checkValidity));
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
