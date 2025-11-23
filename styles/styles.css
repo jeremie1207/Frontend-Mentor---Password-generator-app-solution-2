@@ -250,6 +250,10 @@ main {
   inline-size: 100%;
 }
 
+.border-none {
+  border: none;
+}
+
 /* block */
 
 @media (min-width: 35rem) {

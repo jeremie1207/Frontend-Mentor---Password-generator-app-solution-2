@@ -10,37 +10,35 @@ const uppercaseCheckbox = document.getElementById("uppercase");
 const lowercaseCheckbox = document.getElementById("lowercase");
 const numbersCheckbox = document.getElementById("numbers");
 const symbolsCheckbox = document.getElementById("symbols");
-
+const strengthTitle = document.querySelector(".strength_value_title");
 
 const UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const LOWERCASE = "abcdefghijklmnopqrstuvwxyz";
 const NUMBERS = "0123456789";
 const SYMBOLS = "!@#$%^&*()_+=-{}[]<>?";
 
-
 function generatePassword(length) {
   let pool = "";
 
-  if(uppercaseCheckbox.checked) pool+= UPPERCASE;
+  if (uppercaseCheckbox.checked) pool += UPPERCASE;
 
-  if(lowercaseCheckbox.checked) pool+= LOWERCASE;
+  if (lowercaseCheckbox.checked) pool += LOWERCASE;
 
-  if(numbersCheckbox.checked) pool+= NUMBERS;
+  if (numbersCheckbox.checked) pool += NUMBERS;
 
-  if(symbolsCheckbox.checked) pool+= SYMBOLS;
+  if (symbolsCheckbox.checked) pool += SYMBOLS;
 
   let password = "";
 
-  for(let i = 0; i < length; i++) {
+  for (let i = 0; i < length; i++) {
     password += pool[Math.floor(Math.random() * pool.length)];
   }
 
   return password;
 }
 
-
 function getLengthBonusPoint(length) {
-  if(length < 9) return 0;
+  if (length < 9) return 0;
 
   return (length - 8) * 3;
 }
@@ -62,48 +60,47 @@ function containsSymbol(str) {
 }
 
 function getPasswordBonusScore(password) {
-  let points =  getLengthBonusPoint(password.length);
+  let points = getLengthBonusPoint(password.length);
   let countType = 0;
 
-  if(containsUppercase(password)) {
-    points+= 10;
+  if (containsUppercase(password)) {
+    points += 10;
     countType++;
   }
 
-  if(containsLowercase(password)) {
-    points+= 10;
+  if (containsLowercase(password)) {
+    points += 10;
     countType++;
   }
 
-  if(containsNumber(password)) {
-    points+= 10;
+  if (containsNumber(password)) {
+    points += 10;
     countType++;
   }
 
-  if(containsSymbol(password)) {
-    points+= 10;
+  if (containsSymbol(password)) {
+    points += 10;
     countType++;
   }
 
   // add bonus points if the password contains more then 2 type of character
-  if(countType > 2) points += 15;
+  if (countType > 2) points += 15;
 
   return points;
 }
 
 function getPasswordStrength(password) {
   const basePoint = 10;
-  let points = basePoint + getLengthBonusPoint(password);
+  let points = basePoint + getPasswordBonusScore(password);
   console.log(points);
-  console.log(getLengthBonusPoint(password));
 
-  if(points < 26) return "Too Weak";
+  if (points < 26) return "Too Weak";
 
-  if(points > 25 && points < 51) return "Weak";
+  if (points > 25 && points < 51) return "Weak";
 
-  if(points > 50 && points < 76) return "Medium";
+  if (points > 50 && points < 76) return "Medium";
 
-  return "Strong"
+  return "Strong";
 }
 
 const isAnyOptionsChecked = () =>
@@ -118,7 +115,15 @@ const generateBntState = () => {
 };
 
 const copyBtnState = () => {
-  btnCopy.disabled = !(isPasswordInputEmpty());
+  btnCopy.disabled = !isPasswordInputEmpty();
+};
+
+const passwordLevelOutputHandler = (password) => {};
+
+const passwordStrengthOutput = (password) => {
+  const strength = getPasswordStrength(password);
+  strengthTitle.classList.remove("hidden");
+  strengthTitle.textContent = strength;
 };
 
 slider.addEventListener("input", function () {
@@ -131,22 +136,22 @@ slider.addEventListener("input", function () {
 });
 
 slider.addEventListener("change", generateBntState);
-options.forEach((option) => option.addEventListener("change", generateBntState));
+options.forEach((option) =>
+  option.addEventListener("change", generateBntState)
+);
 
-
-btnCopy.addEventListener("click", async function() {
+btnCopy.addEventListener("click", async function () {
   await navigator.clipboard.writeText(passwordInput.value);
   copiedText.classList.remove("hidden");
 
-  setTimeout(()=> {
+  setTimeout(() => {
     copiedText.classList.add("hidden");
   }, 2500);
 });
-
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
   let password = generatePassword(parseInt(slider.value));
   passwordInput.value = password;
-  getPasswordStrength(password);
+  passwordStrengthOutput(password);
 });
