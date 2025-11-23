@@ -254,6 +254,10 @@ main {
   border: none;
 }
 
+.border-solid-2px-transparent {
+  border: 2px solid transparent;
+}
+
 /* block */
 
 @media (min-width: 35rem) {
@@ -430,4 +434,30 @@ main {
 
 .option:is(:hover, :active) {
   border: 0.1rem solid var(--color-green-200);
+}
+
+.strength_value_icon[data-state="0"] > *:is(.level) {
+  background-color: transparent;
+  border: 2px solid var(--color-grey-200);
+}
+
+.strength_value_icon[data-state="1"] > *:is(.level_1) {
+  border: 2px solid transparent;
+  background-color: var(--color-red-500);
+}
+
+.strength_value_icon[data-state="2"] > *:is(.level_1, .level_2) {
+  border: 2px solid transparent;
+  background-color: var(--color-orange-400);
+}
+
+.strength_value_icon[data-state="3"] > *:is(.level_1, .level_2, .level_3) {
+  border: 2px solid transparent;
+  background-color: var(--color-yellow-200);
+}
+
+.strength_value_icon[data-state="4"]
+  > *:is(.level_1, .level_2, .level_3, .level_4) {
+  border: 2px solid transparent;
+  background-color: var(--color-green-200);
 }

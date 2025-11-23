@@ -11,11 +11,14 @@ const lowercaseCheckbox = document.getElementById("lowercase");
 const numbersCheckbox = document.getElementById("numbers");
 const symbolsCheckbox = document.getElementById("symbols");
 const strengthTitle = document.querySelector(".strength_value_title");
+const strengthValueIcon = document.querySelector(".strength_value_icon");
 
 const UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const LOWERCASE = "abcdefghijklmnopqrstuvwxyz";
 const NUMBERS = "0123456789";
 const SYMBOLS = "!@#$%^&*()_+=-{}[]<>?";
+
+const STRENGTH_TYPE = ["TOO WEAK", "WEAK", "MEDIUM", "STRONG"];
 
 function generatePassword(length) {
   let pool = "";
@@ -94,13 +97,13 @@ function getPasswordStrength(password) {
   let points = basePoint + getPasswordBonusScore(password);
   console.log(points);
 
-  if (points < 26) return "Too Weak";
+  if (points < 26) return 0;
 
-  if (points > 25 && points < 51) return "Weak";
+  if (points > 25 && points < 51) return 1;
 
-  if (points > 50 && points < 76) return "Medium";
+  if (points > 50 && points < 76) return 2;
 
-  return "Strong";
+  return 3;
 }
 
 const isAnyOptionsChecked = () =>
@@ -116,14 +119,6 @@ const generateBntState = () => {
 
 const copyBtnState = () => {
   btnCopy.disabled = !isPasswordInputEmpty();
-};
-
-const passwordLevelOutputHandler = (password) => {};
-
-const passwordStrengthOutput = (password) => {
-  const strength = getPasswordStrength(password);
-  strengthTitle.classList.remove("hidden");
-  strengthTitle.textContent = strength;
 };
 
 slider.addEventListener("input", function () {
@@ -149,9 +144,15 @@ btnCopy.addEventListener("click", async function () {
   }, 2500);
 });
 
-form.addEventListener("submit", function (event) {
-  event.preventDefault();
+btnGenerate.addEventListener("click", function () {
   let password = generatePassword(parseInt(slider.value));
   passwordInput.value = password;
-  passwordStrengthOutput(password);
+  const strengthIndex = getPasswordStrength(password);
+  strengthTitle.classList.remove("hidden");
+  strengthTitle.textContent = STRENGTH_TYPE[strengthIndex];
+  strengthValueIcon.setAttribute("data-state", `${strengthIndex + 1}`);
+});
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
 });
