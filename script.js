@@ -38,6 +38,74 @@ function generatePassword(length) {
   return password;
 }
 
+
+function getLengthBonusPoint(length) {
+  if(length < 9) return 0;
+
+  return (length - 8) * 3;
+}
+
+function containsUppercase(str) {
+  return /[A-Z]/.test(str);
+}
+
+function containsLowercase(str) {
+  return /[a-z]/.test(str);
+}
+
+function containsNumber(str) {
+  return /\d/.test(str);
+}
+
+function containsSymbol(str) {
+  return /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/.test(str);
+}
+
+function getPasswordBonusScore(password) {
+  let points =  getLengthBonusPoint(password.length);
+  let countType = 0;
+
+  if(containsUppercase(password)) {
+    points+= 10;
+    countType++;
+  }
+
+  if(containsLowercase(password)) {
+    points+= 10;
+    countType++;
+  }
+
+  if(containsNumber(password)) {
+    points+= 10;
+    countType++;
+  }
+
+  if(containsSymbol(password)) {
+    points+= 10;
+    countType++;
+  }
+
+  // add bonus points if the password contains more then 2 type of character
+  if(countType > 2) points += 15;
+
+  return points;
+}
+
+function getPasswordStrength(password) {
+  const basePoint = 10;
+  let points = basePoint + getLengthBonusPoint(password);
+  console.log(points);
+  console.log(getLengthBonusPoint(password));
+
+  if(points < 26) return "Too Weak";
+
+  if(points > 25 && points < 51) return "Weak";
+
+  if(points > 50 && points < 76) return "Medium";
+
+  return "Strong"
+}
+
 const isAnyOptionsChecked = () =>
   Array.from(options).some((option) => option.checked);
 
@@ -80,4 +148,5 @@ form.addEventListener("submit", function (event) {
   event.preventDefault();
   let password = generatePassword(parseInt(slider.value));
   passwordInput.value = password;
+  getPasswordStrength(password);
 });
