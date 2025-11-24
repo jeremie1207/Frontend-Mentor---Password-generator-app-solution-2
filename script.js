@@ -1,5 +1,5 @@
-const slider = document.getElementById("slider");
-const sliderValueText = document.querySelector(".character_length");
+const characterLength = document.getElementById("slider");
+const characterLengthValueText = document.querySelector(".character_length");
 const options = document.querySelectorAll(".option");
 const form = document.querySelector(".password_generator");
 const btnGenerate = document.getElementById("generate");
@@ -95,7 +95,6 @@ function getPasswordBonusScore(password) {
 function getPasswordStrength(password) {
   const basePoint = 10;
   let points = basePoint + getPasswordBonusScore(password);
-  console.log(points);
 
   if (points < 26) return 0;
 
@@ -111,18 +110,18 @@ const isAnyOptionsChecked = () =>
 
 const isPasswordInputEmpty = () => passwordInput.textContent === "";
 
-const isSliderValueZero = () => parseInt(slider.value) !== 0;
+const isCharacterLengthValue = () => parseInt(characterLength.value) !== 0;
 
 const generateBntState = () => {
-  btnGenerate.disabled = !(isAnyOptionsChecked() && isSliderValueZero());
+  btnGenerate.disabled = !(isAnyOptionsChecked() && isCharacterLengthValue());
 };
 
 const copyBtnState = () => {
   btnCopy.disabled = !isPasswordInputEmpty();
 };
 
-slider.addEventListener("input", function () {
-  sliderValueText.textContent = this.value;
+characterLength.addEventListener("input", function () {
+  characterLengthValueText.textContent = this.value;
   const percent = Math.floor((parseInt(this.value) / 20) * 100);
   this.style.background = `linear-gradient(to right, hsl(127, 100%, 82%) 0%, 
                                         hsl(127, 100%, 82%) ${percent}%, 
@@ -130,7 +129,7 @@ slider.addEventListener("input", function () {
                                         hsl(248, 15%, 11%) 100%)`;
 });
 
-slider.addEventListener("change", generateBntState);
+characterLength.addEventListener("change", generateBntState);
 options.forEach((option) =>
   option.addEventListener("change", generateBntState)
 );
@@ -145,7 +144,7 @@ btnCopy.addEventListener("click", async function () {
 });
 
 btnGenerate.addEventListener("click", function () {
-  let password = generatePassword(parseInt(slider.value));
+  let password = generatePassword(parseInt(characterLength.value));
   passwordInput.value = password;
   const strengthIndex = getPasswordStrength(password);
   strengthTitle.classList.remove("hidden");
