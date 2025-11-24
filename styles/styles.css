@@ -262,6 +262,10 @@ main {
   border: 2px solid transparent;
 }
 
+.font-bold {
+  font-weight: bold;
+}
+
 /* block */
 
 .title_container {
